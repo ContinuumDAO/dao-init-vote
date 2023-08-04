@@ -4,7 +4,7 @@ pragma solidity ^0.8.19;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 
-contract MULTIDAOVOTE is ERC20 {
+contract MULTIDAO is ERC20 {
 
     constructor(uint256 _supply)
         ERC20("MultiDAO voting token", "MULTIDAOVOTE")

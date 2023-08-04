@@ -18,27 +18,26 @@ async function main() {
 
 
 
-    // const MultiDAOVote = await ethers.getContractFactory("MULTIDAOVOTE")
-    // const token = await MultiDAOVote.deploy()
-
-    // await token.deployed()
-
-    // const tokenAddr = token.address
-    // const symbol = await token.symbol()
-
-    // console.log(`${symbol} address is ${tokenAddr}`)
-
-
-    
     const MultiDAOVote = await ethers.getContractFactory("MULTIDAOVOTE")
-    const tokenAddr = "0x3FA547BF686672E8DF30BCF35156dD97d26Ad604".toLowerCase()
-    const token = await MultiDAOVote.attach(tokenAddr)
+    const token = await MultiDAOVote.deploy()
+
+    await token.deployed()
+
+    const tokenAddr = token.address
+
+    /* address deployed #1 0x3FA547BF686672E8DF30BCF35156dD97d26Ad604 */
+
     
+    // const MultiDAOVote = await ethers.getContractFactory("MULTIDAOVOTE")
+    // const tokenAddr = "".toLowerCase()
+    // const token = await MultiDAOVote.attach(tokenAddr)
+
     const name = await token.name()
     const symbol = await token.symbol()
     const decimals = await token.decimals()
+    const admin = await token.admin()
 
-    console.log(`${name}\n${symbol}\n${decimals}`)
+    console.log(`${name}\n${symbol}\n${decimals}\nAdmin address (minting priviliges): ${admin}`)
 }
 
 

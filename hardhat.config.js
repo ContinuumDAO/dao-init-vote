@@ -5,7 +5,9 @@ require("@nomiclabs/hardhat-ethers")
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   networks: {
-    hardhat: {},
+    localhost: {
+      url: "http://127.0.0.1:8545"
+    }
     // polygontestnet: {
     //   url: process.env.POLYGON_TESTNET_RPC_PROVIDER,
     //   accounts: [process.env.PRIVATE_KEY]

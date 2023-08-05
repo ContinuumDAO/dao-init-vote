@@ -1,11 +1,11 @@
-const {ethers, hre} = require("hardhat")
+const { ethers } = require("hardhat")
 const {veMultiAbi} = require("../contracts/abi/veMulti")
-const fs = require("fs")
 const dotenv = require("dotenv")
+const fs = require("fs")
 
 dotenv.config()
 
-const chain: string = process.env.chain || "ethereum"
+const chain = process.env.chain || "ethereum"
 
 console.log(`Reading on ${ chain }..`)
 
@@ -20,7 +20,7 @@ const veMultiAddresses = {
 
 const endMultiChainTime = ethers.BigNumber.from("1689292800")  // 14th July 2023
 
-async function main() {
+async function snapshot() {
 
     if(veBalancesCurrent.length > 0) {
         console.log("File is not empty")
@@ -45,7 +45,7 @@ async function main() {
 
     for(let i = 1; i <= supply; i++) {
         await pause(500)
-        let owner: string
+        let owner
         try {
             owner = await veMulti.ownerOf(i.toString())
         } catch(err) {
@@ -71,7 +71,7 @@ async function main() {
 }
 
 
-main().catch((error) => {
+snapshot().catch((error) => {
     console.error(error);
     process.exitCode = 1;
 });

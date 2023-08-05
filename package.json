@@ -4,10 +4,7 @@
     "description": "",
     "main": "getMultiPoints.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "mint": "node scripts/1_mint_multi_vote_token.js",
-        "snapshot": "node scripts/2_snapshot.js",
-        "distribute": "node scripts/3_distribute.js"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",

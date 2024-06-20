@@ -1,1 +1,1 @@
-# multidao-vote
+# dao-init-vote
